@@ -1,9 +1,19 @@
 # Site navigation links
 
+- title: Home
+  url: /
+  excerpt:
+  image:
+
 - title: Articles
   url: /articles/
   excerpt:
   image:
   
-- title: Made Mistakes
-  url: http://mademistakes.com
+- title: About
+  url: /about/
+  excerpt:
+  image:
+  
+# - title: RSS
+#   url: 
