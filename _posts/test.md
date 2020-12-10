@@ -1,0 +1,11 @@
+---
+layout: article
+title: "This is a test"
+categories: articles
+modified: 2016-06-01T16:28:11-04:00
+tags: [sample]
+comments: true
+ads: true
+---
+
+This is a test.
