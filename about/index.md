@@ -1,3 +1,8 @@
+---
+layout: article
+title: "About"
+---
+
 Hey there, thanks for visiting my blog.
 
 I’m a Java developer with a bunch of experience in Groovy, [Ruby](https://rubyeyeforthejavaguy.blogspot.com/), [Scala](https://scalaeyeforthejavaguy.blogspot.com/), Haskell, and Javascript.
