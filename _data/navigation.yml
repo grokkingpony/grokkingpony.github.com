@@ -1,6 +1,9 @@
 # Site navigation links
 
-- title:
-  url:
+- title: Articles
+  url: /articles
   excerpt:
   image:
+  
+- title: Made Mistakes
+  url: http://mademistakes.com
