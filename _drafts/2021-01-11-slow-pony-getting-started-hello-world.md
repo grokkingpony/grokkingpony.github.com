@@ -50,4 +50,17 @@ The final line takes this ```env``` and does something with it.  It's the exciti
    
 This line starts with our reference ```env``` to an instance of ```Env```. The dot-notation here indicates two things. The first dot is us accessing a field, ``out``, on ```env```. The second dot is a function call; we're calling the method ```print()``` on the ```out``` field, and passing a String parameter. (The message that we want printed to *stdout*.)
 
-# Compiling and running
+# What happens when we compile?
+You’ve just run a newly created program, so let’s examine each step in the process.
+
+Before running a Pony program, you must compile it using the Pony compiler by entering the ```ponyc``` command in your project directory:
+
+    $ ponyc
+    
+Note, you _don't_ need to specify your Pony source code file, ```main.pony```.  This is because this is the default name for Pony code which contains the required ```Main``` actor.
+
+If you have a C or C++ background, you’ll notice that this is similar to ```gcc``` or ```clang```. What ```ponyc``` has done is built the current directory, ```.```, plus the stuff that is built into Pony, ```builtin```, it generated some code, optimised it, created an object file (don’t worry if you don’t know what that is), and linked it into an executable with whatever libraries were needed. 
+
+Wait, it linked too? Yes. You won’t need a build system (like make) for Pony. It handles all this for you.
+
+Then you have a self-contained, platform-specific binary; ```helloworld```; which contains your program and everything it needs to run. 
