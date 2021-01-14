@@ -21,9 +21,33 @@ Save the file, and go back to your terminal window. On MacOs and Linux, enter th
 
     $ ponyc
     $ ./helloworld
+    Hello, world!
     
-
+Regardless of Operating System differences (I've only shown the Mac bits as thats my platform) you'll see the ```Hello, world!``` printed.  If you don't, check your code, check the compilation worked properly (I haven't shown the compilation output) and if it still doesn't work head back to the [previous post]() and check everything you need installed correctly.
 
 # Anatomy of a Pony program
+Lets take a look at what happened in our small first program. There's a lot we need just to priint this message.
+
+The first piece is the first line:
+
+    actor Main
+    
+This line defines your first ```Actor``` in Pony.  Actors are a big deal in Pony. They are a bit like classes in other languages, but they have other special features which make distributed and multi-threaded programming a _lot_ easier.
+
+The ```Main``` actor is special. Just like other programming languages with their ```main()``` functions, the ```Main``` actor is where a program starts.
+
+You might also notice that we _don't_ have curly braces. Neither do we have semi-colons. Indentation is also convention and signifies nothing to the compiler. (We could have this code on a single line and it would compile and run.)
+
+The next line declares a constructor function (but not it's body which comes next) for our Actor:
+
+    new create(env: Env) => 
+    
+The fact it's a constructor is revealed by the ```new``` keyword and the name of this constructor function is ```create```. When it's called it creates a new instance of the ```Main``` actor.  For the construction we are passing in a single parameter called ```env``` of type ```Env```, where ```env``` represents the environment where the program is running, and lets us interact with it, for example by printing things to ```sdtout```.
+
+The final line takes this ```env``` and does something with it.  It's the exciting (and non-boiler-plate) part of your program:
+
+    env.out.print("Hello, world!")
+   
+This line starts with our reference ```env``` to an instance of ```Env```. The dot-notation here indicates two things. The first dot is us accessing a field, ``out``, on ```env```. The second dot is a function call; we're calling the method ```print()``` on the ```out``` field, and passing a String parameter. (The message that we want printed to *stdout*.)
 
 # Compiling and running
